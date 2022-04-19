@@ -85,8 +85,7 @@ class _LoginPageState extends State<LoginView> {
                   ElevatedButton(
                     onPressed: () {
                       //if (_formKey.currentState!.validate()) {}
-                      //go to next view
-
+                      //go to next view, not sure if validator needed
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
@@ -103,6 +102,7 @@ class _LoginPageState extends State<LoginView> {
                     child: const Text(
                       'Log in',
                       style: TextStyle(
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                       ),
@@ -130,6 +130,7 @@ class _LoginPageState extends State<LoginView> {
                     child: const Text(
                       'Register',
                       style: TextStyle(
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                       ),
@@ -149,6 +150,7 @@ class _LoginPageState extends State<LoginView> {
                     child: const Text(
                       'Forgot password or username?',
                       style: TextStyle(
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 14,
                       ),
