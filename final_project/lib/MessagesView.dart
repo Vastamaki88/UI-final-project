@@ -12,7 +12,11 @@ State<MessagesView> createState() => _MessagesViewState();
 }
 
 class _MessagesViewState extends State<MessagesView> {
-  final _formKey = GlobalKey<FormState>();
+  double pL = 48;
+  double pT = 32;
+  double pR = 48;
+  double pB = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +42,9 @@ class _MessagesViewState extends State<MessagesView> {
         ),
         body: Column(
           children: [
+            const SizedBox(
+              height: 10,
+            ),
             Center(
               child: ElevatedButton(
                 onPressed: () {
@@ -52,19 +59,199 @@ class _MessagesViewState extends State<MessagesView> {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                    minimumSize: Size(300, 40),
+                    minimumSize: Size(300, 50),
                     textStyle: const TextStyle(fontSize: 20)
 
                 ),
                 child: const Text(
-                  'Log in',
+                  'Open new case',
                   style: TextStyle(
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
                 ),
               ),
               ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(pL,pT,pR,pB),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    minimumSize: Size(300, 64),
+                    textStyle: const TextStyle(fontSize: 20)
+
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[Icon(
+                    Icons.chat_bubble,
+                    color: Theme.of(context).colorScheme.primary,
+                    size: 24.0,
+                    semanticLabel: 'Text to announce in accessibility modes',
+                  ),
+                  const SizedBox(
+                    width: 50,
+                  ),
+                  Column(
+                    children: const [
+                      Text(
+                        'Open cases',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 22,
+                        ),
+                      ),
+                      Text(
+                        'Review current cases',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w200,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                  ],
+                ),
+            ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(pL,pT,pR,pB),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    minimumSize: Size(300, 64),
+                    textStyle: const TextStyle(fontSize: 20)
+
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    const Icon(
+                      Icons.message,
+                      color: Colors.grey,
+                      size: 24.0,
+                      semanticLabel: 'Text to announce in accessibility modes',
+                    ),
+                    const SizedBox(
+                      width: 50,
+                    ),
+                    Column(
+                      children: const [
+                        Text(
+                          'Closed cases',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 22,
+                          ),
+                        ),
+                        Text(
+                          'Review past cases',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w200,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(pL,pT,pR,pB),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    minimumSize: Size(300, 64),
+                    textStyle: const TextStyle(fontSize: 20)
+
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(
+                      Icons.forum,
+                      color: Theme.of(context).colorScheme.primary,
+                      size: 24.0,
+                      semanticLabel: 'Text to announce in accessibility modes',
+                    ),
+                    const SizedBox(
+                      width: 50,
+                    ),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Column(
+                        children: const [
+                          Text(
+                            'Forum',
+                            style: TextStyle(
+
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 22,
+                            ),
+                          ),
+                          Text(
+                            'Open discussion for users',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w200,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(pL,pT,pR,pB),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    minimumSize: Size(300, 64),
+                    textStyle: const TextStyle(fontSize: 20)
+
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(
+                      Icons.label_important,
+                      color: Theme.of(context).colorScheme.primary,
+                      size: 24.0,
+                      semanticLabel: 'Text to announce in accessibility modes',
+                    ),
+                    const SizedBox(
+                      width: 50,
+                    ),
+                    Column(
+                      children: const [
+                        Text(
+                          'Direct Messages',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 22,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
     );
@@ -72,9 +259,11 @@ class _MessagesViewState extends State<MessagesView> {
 }
 
 AppBar buildAppBar(BuildContext context) {
+  String appBarTitle = "Organization Ltd";
   return AppBar(
     automaticallyImplyLeading: false,
-    title: const Center(child: Text("Messages")),
+    centerTitle: true,
+    title: Text(appBarTitle),
     backgroundColor: Theme.of(context).colorScheme.background,
     actions: [
       IconButton( //redirect to login view
