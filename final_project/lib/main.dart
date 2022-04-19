@@ -14,6 +14,7 @@ ColorScheme defaultColorScheme = const ColorScheme(
   onError: Color(0xff000000),
   brightness: Brightness.dark,
 );
+
 void main() {
   runApp(const MyApp());
 }
