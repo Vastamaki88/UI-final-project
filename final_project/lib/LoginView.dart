@@ -1,4 +1,5 @@
 import 'package:email_validator/email_validator.dart';
+import 'package:final_project/MessagesView.dart';
 import 'package:flutter/material.dart';
 import 'RegisterView.dart';
 
@@ -83,7 +84,16 @@ class _LoginPageState extends State<LoginView> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {}
+                      //if (_formKey.currentState!.validate()) {}
+                      //go to next view
+
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                            const MessagesView(title: 'Messaging UI'),
+                          ),
+                        );
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(300, 40),
