@@ -279,7 +279,7 @@ AppBar buildAppBar(BuildContext context) {
     actions: [
       IconButton( //redirect to login view
           onPressed: () {
-        Navigator.pushReplacement(
+        Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) =>
@@ -287,7 +287,7 @@ AppBar buildAppBar(BuildContext context) {
           ),
         );
       },
-          icon: const Icon(Icons.supervisor_account),),
+          icon: const Icon(Icons.manage_accounts),),
     ],
   );
 }

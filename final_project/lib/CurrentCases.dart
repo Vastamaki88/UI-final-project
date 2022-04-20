@@ -1,4 +1,5 @@
 
+import 'package:final_project/ExampleCase.dart';
 import 'package:final_project/LoginView.dart';
 import 'package:flutter/material.dart';
 import 'MessagesView.dart';
@@ -40,7 +41,8 @@ class _CurrentCasesState extends State<CurrentCases> {
         appBar: AppBar(title: const Padding(
           padding: EdgeInsets.fromLTRB(32,0,32,0),
           child: Text("Currently open cases"),
-        ),),
+        ),
+        ),
         body:
             //beginning of case cards UI
         Column(
@@ -53,7 +55,7 @@ class _CurrentCasesState extends State<CurrentCases> {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                      const CurrentCases(title: 'Current Cases UI'),
+                      const ExampleCase(),
                     ),
                   );
                 },
@@ -66,7 +68,7 @@ class _CurrentCasesState extends State<CurrentCases> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[Icon(
-                    Icons.chat_bubble,
+                    Icons.mark_email_read,
                     color: Theme.of(context).colorScheme.primary,
                     size: 24.0,
                     semanticLabel: 'Text to announce in accessibility modes',
@@ -106,7 +108,7 @@ class _CurrentCasesState extends State<CurrentCases> {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                      const CurrentCases(title: 'Current Cases UI'),
+                      const ExampleCase(),
                     ),
                   );
                 },
@@ -119,7 +121,7 @@ class _CurrentCasesState extends State<CurrentCases> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[Icon(
-                    Icons.chat_bubble,
+                    Icons.mail,
                     color: Theme.of(context).colorScheme.primary,
                     size: 24.0,
                     semanticLabel: 'Text to announce in accessibility modes',
@@ -159,7 +161,7 @@ class _CurrentCasesState extends State<CurrentCases> {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                      const CurrentCases(title: 'Current Cases UI'),
+                      const ExampleCase(),
                     ),
                   );
                 },
@@ -172,7 +174,7 @@ class _CurrentCasesState extends State<CurrentCases> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[Icon(
-                    Icons.chat_bubble,
+                    Icons.mail,
                     color: Theme.of(context).colorScheme.primary,
                     size: 24.0,
                     semanticLabel: 'Text to announce in accessibility modes',
@@ -212,7 +214,7 @@ class _CurrentCasesState extends State<CurrentCases> {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                      const CurrentCases(title: 'Current Cases UI'),
+                      const ExampleCase(),
                     ),
                   );
                 },
@@ -225,7 +227,7 @@ class _CurrentCasesState extends State<CurrentCases> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[Icon(
-                    Icons.chat_bubble,
+                    Icons.mail,
                     color: Theme.of(context).colorScheme.primary,
                     size: 24.0,
                     semanticLabel: 'Text to announce in accessibility modes',

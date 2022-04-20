@@ -37,7 +37,10 @@ class _OpenNewCaseState extends State<OpenNewCase> {
               ),
             ]
         ),
-        appBar: AppBar(title: Center(child: const Text("Open a new case")),),
+        appBar: AppBar(title: const Padding(
+          padding: EdgeInsets.fromLTRB(48,0,48,0),
+          child: Text("Open a new case"),
+        ),),
       body:
         Column(
           children: [
@@ -90,7 +93,7 @@ class _OpenNewCaseState extends State<OpenNewCase> {
                       onPressed: () {
                         //if (_formKey.currentState!.validate()) {}
                         //go to next view, not sure if validator needed
-                        Navigator.pushReplacement(
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
@@ -120,7 +123,7 @@ class _OpenNewCaseState extends State<OpenNewCase> {
                       onPressed: () {
                         //if (_formKey.currentState!.validate()) {}
                         //go to next view, not sure if validator needed
-                        Navigator.pushReplacement(
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
@@ -149,7 +152,7 @@ class _OpenNewCaseState extends State<OpenNewCase> {
                       onPressed: () {
                         //if (_formKey.currentState!.validate()) {}
                         //go to next view, not sure if validator needed
-                        Navigator.pushReplacement(
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
