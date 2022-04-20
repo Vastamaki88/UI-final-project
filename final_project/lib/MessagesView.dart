@@ -1,4 +1,5 @@
 
+import 'package:final_project/CurrentCases.dart';
 import 'package:final_project/LoginView.dart';
 import 'package:final_project/OpenNewCase.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,8 @@ class _MessagesViewState extends State<MessagesView> {
                 onPressed: () {
                   //if (_formKey.currentState!.validate()) {}
                   //go to next view, not sure if validator needed
-                  Navigator.pushReplacement(
+                  //navigator.push should be used to allow for back button
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
@@ -77,7 +79,15 @@ class _MessagesViewState extends State<MessagesView> {
             Padding(
               padding: EdgeInsets.fromLTRB(pL,pT,pR,pB),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                      const CurrentCases(title: 'Current Cases UI'),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     minimumSize: Size(300, 64),
