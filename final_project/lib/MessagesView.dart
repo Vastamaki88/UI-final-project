@@ -1,5 +1,6 @@
 
 import 'package:final_project/LoginView.dart';
+import 'package:final_project/OpenNewCase.dart';
 import 'package:flutter/material.dart';
 import 'LoginView.dart';
 
@@ -54,7 +55,7 @@ class _MessagesViewState extends State<MessagesView> {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                      const MessagesView(title: 'Messaging UI'),
+                      const OpenNewCase(title: 'New Case UI'),
                     ),
                   );
                 },
