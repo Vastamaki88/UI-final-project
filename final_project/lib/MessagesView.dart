@@ -289,6 +289,5 @@ AppBar buildAppBar(BuildContext context) {
       },
           icon: const Icon(Icons.supervisor_account),),
     ],
-
   );
 }

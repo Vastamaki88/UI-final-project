@@ -21,7 +21,7 @@ class _CurrentCasesState extends State<CurrentCases> {
         backgroundColor: Theme.of(context).colorScheme.background,
         bottomNavigationBar: BottomNavigationBar(
             backgroundColor: Theme.of(context).colorScheme.background,
-            currentIndex: 1,
+            currentIndex: 2,
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.radio_button_unchecked),
