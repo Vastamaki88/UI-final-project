@@ -28,7 +28,7 @@ class _RegisterPageState extends State<RegisterView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Sign up',
+              'Register',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 40,
@@ -171,14 +171,14 @@ class _RegisterPageState extends State<RegisterView> {
                       padding: const EdgeInsets.fromLTRB(40, 15, 40, 15),
                     ),
                     child: const Text(
-                      'Sign up',
+                      'Create account',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
