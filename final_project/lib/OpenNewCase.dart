@@ -1,5 +1,6 @@
 
 import 'package:final_project/LoginView.dart';
+import 'package:final_project/main.dart';
 import 'package:flutter/material.dart';
 import 'MessagesView.dart';
 import 'LoginView.dart';
@@ -57,6 +58,7 @@ class _OpenNewCaseState extends State<OpenNewCase> {
                 ),
               ),
             ),
+           
             Padding(
               padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
               child: TextFormField(
@@ -83,8 +85,45 @@ class _OpenNewCaseState extends State<OpenNewCase> {
                 ),
               ),
             ),
+             Padding(
+              padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+              child: ElevatedButton(
+                
+                onPressed:() =>{},
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.red,
+                    minimumSize: Size(300, 64),
+                    textStyle: const TextStyle(fontSize: 20)
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[Icon(
+                    Icons.attach_file,
+                    color: Theme.of(context).colorScheme.onSurface,
+                    size: 30.0,
+                    semanticLabel: 'Text to announce in accessibility modes',
+                  ),
+                  const SizedBox(
+                    width: 50,
+                  ),
+                  Column(
+                    children: const [
+                      Text(
+                        'Attach files',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 22,
+                        ),
+                      ),                  
+                    ],
+                  ),
+                  ],
+                ),
+            ),
+            ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 64, 20, 0),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
               child: Row(
                 children: [
                   Padding(
