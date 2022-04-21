@@ -108,8 +108,17 @@ class _LoginPageState extends State<LoginView> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
+                  
+                  const Divider(
+            height: 40,
+            thickness: 2,
+            indent: 10,
+            endIndent: 0,
+            color: Colors.white,
+          ),
+          const Text('Don\'t have an account yet?'),
+          const SizedBox(
+                    height: 10,
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -123,8 +132,7 @@ class _LoginPageState extends State<LoginView> {
                         },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(300, 40),
-                      textStyle: const TextStyle(fontSize: 20)
-                      
+                      textStyle: const TextStyle(fontSize: 20)                   
                     ),
                     
                     child: const Text(
@@ -136,9 +144,16 @@ class _LoginPageState extends State<LoginView> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+         
+                    const Divider(
+            height: 40,
+            thickness: 2,
+            indent: 10,
+            endIndent: 0,
+            color: Colors.white,
+          ),
+                    
+                  
                   ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {}
@@ -158,25 +173,7 @@ class _LoginPageState extends State<LoginView> {
                   ),
                   const SizedBox(
                     height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text('Not registered yet?'),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  const RegisterView(title: 'Register UI'),
-                            ),
-                          );
-                        },
-                        child: const Text('Create an account'),
-                      ),
-                    ],
-                  ),
+                  ),            
                 ],
               ),
             )
