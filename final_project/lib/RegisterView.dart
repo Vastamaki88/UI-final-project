@@ -18,6 +18,7 @@ class _RegisterPageState extends State<RegisterView> {
 
   @override
   Widget build(BuildContext context) {
+    Character? _character = Character.Employee;
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Container(
@@ -34,7 +35,7 @@ class _RegisterPageState extends State<RegisterView> {
               ),
             ),
             const SizedBox(
-              height: 60,
+              height: 30,
             ),
             Form(
               key: _formKey,
@@ -44,9 +45,7 @@ class _RegisterPageState extends State<RegisterView> {
                     children: [
                       Expanded(
                         child: TextFormField(
-                          validator: (value) => EmailValidator.validate(value!)
-                              ? null
-                              : "Please enter a valid email",
+        
                           maxLines: 1,
                           decoration: InputDecoration(
                             hintText: 'First name',
@@ -62,9 +61,7 @@ class _RegisterPageState extends State<RegisterView> {
                       ),
                       Expanded(
                         child: TextFormField(
-                          validator: (value) => EmailValidator.validate(value!)
-                              ? null
-                              : "Please enter a valid email",
+          
                           maxLines: 1,
                           decoration: InputDecoration(
                             hintText: 'Last name',
@@ -78,12 +75,10 @@ class _RegisterPageState extends State<RegisterView> {
                     ],
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   TextFormField(
-                    validator: (value) => EmailValidator.validate(value!)
-                        ? null
-                        : "Please enter a valid email",
+
                     maxLines: 1,
                     decoration: InputDecoration(
                       hintText: 'Enter your email',
@@ -94,15 +89,9 @@ class _RegisterPageState extends State<RegisterView> {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter your password';
-                      }
-                      return null;
-                    },
                     maxLines: 1,
                     obscureText: true,
                     decoration: InputDecoration(
@@ -114,12 +103,70 @@ class _RegisterPageState extends State<RegisterView> {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {}
-                    },
+                  TextFormField(
+                    maxLines: 1,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      prefixIcon: const Icon(Icons.business),
+                      hintText: 'Enter your company name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+     
+        ListTile(
+          title: const Text('Employee'),
+          leading: Radio<Character>(
+            value: Character.Employee,
+            groupValue: _character,
+            onChanged: (Character? value) {
+              setState(() {
+                _character = value;
+              });
+            },
+          ),
+        ),
+        ListTile(
+          title: const Text('Employer'),
+          leading: Radio<Character>(
+            value: Character.Employer,
+            groupValue: _character,
+            onChanged: (Character? value) {
+              setState(() {
+                _character = value;
+              });
+            },
+          ),
+        ),
+        ListTile(
+          title: const Text('Mediator'),
+          leading: Radio<Character>(
+            value: Character.Mediator,
+            groupValue: _character,
+            onChanged: (Character? value) {
+              setState(() {
+                _character = value;
+              });
+            },
+          ),
+        ),
+    
+                  ElevatedButton(          
+                      onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const LoginView(title: 'Login UI'),
+                            ),
+                          );
+                        },              
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.fromLTRB(40, 15, 40, 15),
                     ),
@@ -131,7 +178,7 @@ class _RegisterPageState extends State<RegisterView> {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -160,3 +207,8 @@ class _RegisterPageState extends State<RegisterView> {
     );
   }
 }
+enum Character { Employee, Employer, Mediator }
+
+
+      
+
