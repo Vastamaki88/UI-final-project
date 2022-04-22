@@ -337,7 +337,7 @@ class _ForumState extends State<Forum> {
                     Icons.forum_outlined,
                     color: Theme.of(context).colorScheme.primary,
                     size: 24.0,
-                    semanticLabel: '',
+                    semanticLabel: 'among us xd',
                   ),
                     const SizedBox(
                       width: 50,
