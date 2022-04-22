@@ -1,4 +1,5 @@
 
+import 'package:final_project/ClosedCases.dart';
 import 'package:final_project/CurrentCases.dart';
 import 'package:final_project/LoginView.dart';
 import 'package:final_project/OpenNewCase.dart';
@@ -132,12 +133,19 @@ class _MessagesViewState extends State<MessagesView> {
             Padding(
               padding: EdgeInsets.fromLTRB(pL,pT,pR,pB),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                      const ClosedCases(title: 'Closed Cases UI'),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     minimumSize: Size(300, 64),
                     textStyle: const TextStyle(fontSize: 20)
-
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -287,7 +295,7 @@ AppBar buildAppBar(BuildContext context) {
           ),
         );
       },
-          icon: const Icon(Icons.manage_accounts),),
+          icon: const Icon(Icons.supervisor_account), color: Colors.white70,),
     ],
   );
 }
