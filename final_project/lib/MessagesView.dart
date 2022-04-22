@@ -4,6 +4,9 @@ import 'package:final_project/CurrentCases.dart';
 import 'package:final_project/LoginView.dart';
 import 'package:final_project/OpenNewCase.dart';
 import 'package:flutter/material.dart';
+import 'DM.dart';
+import 'ExampleCase.dart';
+import 'Forum.dart';
 import 'LoginView.dart';
 
 class MessagesView extends StatefulWidget {
@@ -186,12 +189,19 @@ class _MessagesViewState extends State<MessagesView> {
             Padding(
               padding: EdgeInsets.fromLTRB(pL,pT,pR,pB),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                      const Forum(title: 'Forum UI'),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     minimumSize: Size(300, 64),
                     textStyle: const TextStyle(fontSize: 20)
-
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -236,7 +246,15 @@ class _MessagesViewState extends State<MessagesView> {
             Padding(
               padding: EdgeInsets.fromLTRB(pL,pT,pR,pB),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                      builder: (context) =>
+                  const DM(),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     minimumSize: Size(300, 64),
